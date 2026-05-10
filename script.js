@@ -197,6 +197,12 @@ serviceSelect.addEventListener('change', () => {
         selectedDay = '';
         selectedTime = '';
         selectedDatetimeInput.value = '';
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('selected'));
+        document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
+    } else {
+        daysGrid.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">Сначала выберите услугу выше ↑</p>';
+        timeStep.style.display = 'none';
+        formStep.style.display = 'none';
     }
 });
 
