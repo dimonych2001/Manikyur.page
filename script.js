@@ -78,7 +78,7 @@ window.addEventListener('resize', initCanvas);
 initCanvas();
 drawParticles();
 
-// Отзывы
+// ========== ОТЗЫВЫ ==========
 let reviews = JSON.parse(localStorage.getItem('nailReviews') || '[]');
 const defaultReviews = [
     { id: 1, name: 'Анна К.', service: 'Классический маникюр', rating: 5, text: 'Безупречное качество! Ногти выглядят так аккуратно, что хочется любоваться ими постоянно.', date: '15.12.2024' },
@@ -93,9 +93,15 @@ if (reviews.length === 0) {
 }
 
 function renderReviews() {
-    const container = document.getElementById('reviews-grid');
-    const emojis = { 'Классический маникюр': '✨', 'Аппаратный педикюр': '🦶', 'Дизайн ногтей': '🎨', 'Наращивание ногтей': '💎', 'SPA-уход для рук': '🌿' };
-    container.innerHTML = reviews.slice().reverse().map(r => `
+    const grid = document.getElementById('reviews-grid');
+    const emojis = {
+        'Классический маникюр': '✨',
+        'Аппаратный педикюр': '🦶',
+        'Дизайн ногтей': '🎨',
+        'Наращивание ногтей': '💎',
+        'SPA-уход для рук': '🌿'
+    };
+    grid.innerHTML = reviews.slice().reverse().map(r => `
         <div class="review-card" data-id="${r.id}">
             <button class="delete-review" onclick="deleteReview(${r.id})"><i class="fas fa-times"></i></button>
             <span class="service-badge">${emojis[r.service] || '💅'} ${r.service}</span>
@@ -122,6 +128,7 @@ function deleteReview(id) {
     }
 }
 
+// Форма отзыва
 document.getElementById('review-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const rating = parseInt(document.getElementById('review-rating').value);
@@ -138,7 +145,7 @@ document.getElementById('review-form').addEventListener('submit', function(e) {
     localStorage.setItem('nailReviews', JSON.stringify(reviews));
     this.reset();
     document.getElementById('review-rating').value = 0;
-    document.querySelectorAll('.stars-input i').forEach(s => s.className = 'far fa-star');
+    document.querySelectorAll('#stars-input i').forEach(s => s.className = 'far fa-star');
     document.getElementById('review-form-container').style.display = 'none';
     document.getElementById('show-review-form').style.display = 'block';
     renderReviews();
@@ -149,17 +156,18 @@ document.getElementById('show-review-form').addEventListener('click', function()
     this.style.display = 'none';
 });
 
-document.querySelectorAll('.stars-input i').forEach(star => {
+// Звёзды
+document.querySelectorAll('#stars-input i').forEach(star => {
     star.addEventListener('click', function() {
         const r = parseInt(this.dataset.rating);
         document.getElementById('review-rating').value = r;
-        document.querySelectorAll('.stars-input i').forEach((s, i) => {
+        document.querySelectorAll('#stars-input i').forEach((s, i) => {
             s.className = i < r ? 'fas fa-star' : 'far fa-star';
         });
     });
 });
 
-// Запись
+// ========== ЗАПИСЬ ==========
 const bookingServices = [
     { name: 'Классический маникюр', price: '1 500 ₽', icon: 'fa-hand-holding-heart', color1: '#E8D5D5', color2: '#D4A5A5' },
     { name: 'Аппаратный педикюр', price: '2 200 ₽', icon: 'fa-feather-alt', color1: '#D4C5C5', color2: '#C9B1B1' },
@@ -262,5 +270,6 @@ document.getElementById('new-booking-btn').addEventListener('click', () => {
     document.getElementById('booking-phone').value = '';
 });
 
+// Инициализация
 renderServices();
 renderReviews();
