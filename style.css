@@ -37,7 +37,6 @@ body {
     padding: 0 25px;
 }
 
-/* Canvas фон */
 #bg-canvas {
     position: fixed;
     top: 0;
@@ -46,7 +45,7 @@ body {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 /* Header */
@@ -141,7 +140,7 @@ nav ul li a.active::after {
     z-index: 1001;
 }
 
-/* ========== HERO НОВЫЙ ========== */
+/* ========== HERO ========== */
 #hero {
     position: relative;
     z-index: 1;
@@ -152,7 +151,6 @@ nav ul li a.active::after {
     overflow: hidden;
 }
 
-/* Декоративный фон */
 .hero-bg-decor {
     position: absolute;
     top: 0;
@@ -166,7 +164,7 @@ nav ul li a.active::after {
 .hero-circle {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.08;
+    opacity: 0.06;
 }
 
 .circle-1 {
@@ -191,8 +189,8 @@ nav ul li a.active::after {
     width: 200px;
     height: 200px;
     background: var(--primary-light);
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 60%;
     animation: floatCircle 10s ease-in-out infinite;
 }
 
@@ -206,19 +204,19 @@ nav ul li a.active::after {
     position: absolute;
     height: 1px;
     background: var(--primary-light);
-    opacity: 0.3;
+    opacity: 0.2;
     transform: rotate(-15deg);
 }
 
 .line-1 {
     width: 400px;
-    top: 30%;
+    top: 20%;
     right: -100px;
 }
 
 .line-2 {
     width: 300px;
-    bottom: 20%;
+    bottom: 25%;
     left: -50px;
 }
 
@@ -231,26 +229,24 @@ nav ul li a.active::after {
     z-index: 1;
 }
 
-/* Бейдж */
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 165, 165, 0.15);
+    background: rgba(212, 165, 165, 0.12);
     color: var(--primary-dark);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 25px;
-    border: 1px solid rgba(212, 165, 165, 0.3);
+    border: 1px solid rgba(212, 165, 165, 0.25);
 }
 
 .hero-badge i {
     font-size: 0.9rem;
 }
 
-/* Заголовок */
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -259,34 +255,14 @@ nav ul li a.active::after {
     margin-bottom: 25px;
 }
 
-.hero-word {
-    display: inline-block;
-}
-
 .hero-highlight {
-    display: inline-block;
     color: var(--primary);
     position: relative;
-}
-
-.highlight-letter {
     display: inline-block;
-    animation: letterShine 3s ease-in-out infinite;
+    animation: colorPulse 3s ease-in-out infinite;
 }
 
-.highlight-letter:nth-child(1) { animation-delay: 0s; }
-.highlight-letter:nth-child(2) { animation-delay: 0.1s; }
-.highlight-letter:nth-child(3) { animation-delay: 0.2s; }
-.highlight-letter:nth-child(4) { animation-delay: 0.3s; }
-.highlight-letter:nth-child(5) { animation-delay: 0.4s; }
-.highlight-letter:nth-child(6) { animation-delay: 0.5s; }
-.highlight-letter:nth-child(7) { animation-delay: 0.6s; }
-.highlight-letter:nth-child(8) { animation-delay: 0.7s; }
-.highlight-letter:nth-child(9) { animation-delay: 0.8s; }
-.highlight-letter:nth-child(10) { animation-delay: 0.9s; }
-.highlight-letter:nth-child(11) { animation-delay: 1s; }
-
-@keyframes letterShine {
+@keyframes colorPulse {
     0%, 100% { color: var(--primary); }
     50% { color: var(--primary-dark); }
 }
@@ -299,24 +275,22 @@ nav ul li a.active::after {
     width: 100%;
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
-/* Описание */
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-light);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     line-height: 1.7;
     max-width: 500px;
 }
 
-/* Преимущества */
 .hero-features {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .hero-feature {
@@ -333,12 +307,11 @@ nav ul li a.active::after {
     font-size: 1rem;
 }
 
-/* Кнопки */
 .btn-group {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -379,26 +352,31 @@ nav ul li a.active::after {
     transform: translateY(-2px);
 }
 
-/* Рейтинг */
-.hero-rating {
+.hero-stats {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    gap: 30px;
 }
 
-.rating-stars {
-    display: flex;
-    gap: 3px;
+.hero-stat {
+    text-align: center;
 }
 
-.rating-stars i {
-    color: #E8B4B4;
-    font-size: 0.9rem;
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
-.hero-rating span {
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    font-size: 0.9rem;
+}
+
+.stat-label i {
+    color: #E8B4B4;
+    font-size: 0.7rem;
 }
 
 /* Визуальная часть */
@@ -407,50 +385,41 @@ nav ul li a.active::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
-.hero-text-animation {
+.hero-big-text {
     display: flex;
-    gap: 5px;
-    margin-bottom: 15px;
+    gap: 8px;
 }
 
-.animated-letter {
+.big-letter {
     font-family: 'Playfair Display', serif;
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 700;
     color: var(--text);
-    opacity: 0.15;
+    opacity: 0.08;
     animation: letterFloat 4s ease-in-out infinite;
     transition: all 0.3s ease;
 }
 
-.animated-letter.space {
-    width: 20px;
-}
-
-.animated-letter:nth-child(1) { animation-delay: 0s; }
-.animated-letter:nth-child(2) { animation-delay: 0.2s; }
-.animated-letter:nth-child(3) { animation-delay: 0.4s; }
-.animated-letter:nth-child(4) { animation-delay: 0.6s; }
-.animated-letter:nth-child(5) { animation-delay: 0s; }
-.animated-letter:nth-child(6) { animation-delay: 0.8s; }
-.animated-letter:nth-child(7) { animation-delay: 1s; }
-.animated-letter:nth-child(8) { animation-delay: 1.2s; }
+.big-letter:nth-child(1) { animation-delay: 0s; }
+.big-letter:nth-child(2) { animation-delay: 0.3s; }
+.big-letter:nth-child(3) { animation-delay: 0.6s; }
+.big-letter:nth-child(4) { animation-delay: 0.9s; }
 
 @keyframes letterFloat {
-    0%, 100% { transform: translateY(0); opacity: 0.15; }
-    50% { transform: translateY(-15px); opacity: 0.5; }
+    0%, 100% { transform: translateY(0); opacity: 0.08; }
+    50% { transform: translateY(-15px); opacity: 0.2; }
 }
 
-.hero-subtitle-animation {
+.hero-tagline {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     opacity: 0.5;
     letter-spacing: 3px;
+    margin-top: 15px;
 }
 
 /* Sections */
@@ -494,7 +463,7 @@ section {
 /* Services Cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -512,11 +481,11 @@ section {
 }
 
 .card-img {
-    height: 200px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -533,19 +502,19 @@ section {
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 8px;
     color: var(--text);
 }
 
 .card-content p {
     color: var(--text-light);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
 .price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 15px;
@@ -554,7 +523,7 @@ section {
 /* Reviews */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
@@ -580,14 +549,8 @@ section {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .service-badge {
@@ -669,7 +632,7 @@ section {
 
 /* Review Form */
 .review-form-wrapper {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto 40px;
     text-align: center;
 }
@@ -685,27 +648,14 @@ section {
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .review-form-container h3 {
     font-size: 1.3rem;
     color: var(--text);
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.review-form-container h3 i {
-    color: #E8B4B4;
 }
 
 .review-form input,
@@ -765,14 +715,13 @@ section {
 }
 
 .stars-input i:hover,
-.stars-input i.active,
 .stars-input i.fas {
     color: #E8B4B4;
 }
 
 /* Booking */
 .booking-container {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     background: var(--white);
     border-radius: var(--radius);
@@ -781,7 +730,7 @@ section {
 }
 
 .booking-step {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .booking-step:last-child {
@@ -792,12 +741,12 @@ section {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .step-number {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     background: var(--primary);
     color: var(--white);
     border-radius: 50%;
@@ -817,7 +766,7 @@ section {
 
 .booking-services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
 }
 
@@ -846,15 +795,15 @@ section {
 }
 
 .booking-service-card .service-icon {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 12px;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: var(--transition);
 }
 
@@ -865,7 +814,7 @@ section {
 
 .booking-service-card .service-name {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text);
     margin-bottom: 5px;
 }
@@ -907,11 +856,6 @@ section {
     font-weight: 500;
 }
 
-.selected-service-info i {
-    color: var(--primary);
-    font-size: 1.2rem;
-}
-
 .selected-service-info .change-btn {
     margin-left: auto;
     background: none;
@@ -920,7 +864,6 @@ section {
     cursor: pointer;
     font-size: 0.85rem;
     text-decoration: underline;
-    transition: var(--transition);
 }
 
 .selected-service-info .change-btn:hover {
@@ -929,7 +872,7 @@ section {
 
 .days-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
 }
 
@@ -957,7 +900,7 @@ section {
 }
 
 .day-btn .day-name {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     display: block;
     margin-bottom: 3px;
@@ -968,13 +911,13 @@ section {
 }
 
 .day-btn .day-date {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
 .time-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
 }
 
@@ -1106,7 +1049,6 @@ section {
 .success-message h3 {
     color: var(--text);
     margin-bottom: 10px;
-    font-size: 1.3rem;
 }
 
 .success-message p {
@@ -1180,7 +1122,6 @@ footer p {
     transform: translateY(-3px);
 }
 
-/* Reveal animations */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -1192,24 +1133,16 @@ footer p {
     transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero-grid {
         grid-template-columns: 1fr;
     }
-
     .hero-content h1 {
         font-size: 2.3rem;
     }
-
-    .hero-text-animation {
+    .hero-visual {
         display: none;
     }
-
-    .hero-subtitle-animation {
-        display: none;
-    }
-
     nav ul {
         position: fixed;
         top: 0;
@@ -1224,43 +1157,17 @@ footer p {
         box-shadow: -5px 0 20px rgba(0,0,0,0.05);
         z-index: 1000;
     }
-
     nav ul.show {
         right: 0;
     }
-
     .mobile-menu {
         display: block;
     }
-
     .services-grid,
     .reviews-grid {
         grid-template-columns: 1fr;
     }
-
-    .booking-services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .days-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .time-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .booking-container {
         padding: 25px;
-    }
-
-    footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-contacts {
-        flex-direction: column;
-        gap: 10px;
     }
 }
