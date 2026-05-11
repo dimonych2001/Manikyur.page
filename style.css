@@ -412,9 +412,9 @@ section {
     font-size: 0.85rem;
 }
 
-/* Booking */
+/* ========== НОВЫЙ ДИЗАЙН ФОРМЫ ЗАПИСИ ========== */
 .booking-container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     background: var(--white);
     border-radius: var(--radius);
@@ -422,6 +422,7 @@ section {
     box-shadow: var(--soft-shadow);
 }
 
+/* Шаги */
 .booking-step {
     margin-bottom: 35px;
 }
@@ -430,41 +431,146 @@ section {
     margin-bottom: 0;
 }
 
-.booking-step h3 {
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-header h3 {
     font-size: 1.2rem;
     color: var(--text);
+    font-weight: 600;
+}
+
+/* Карточки услуг в форме записи */
+.booking-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.booking-service-card {
+    background: var(--bg);
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+}
+
+.booking-service-card:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--soft-shadow);
+}
+
+.booking-service-card.selected {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.2);
+}
+
+.booking-service-card .service-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.booking-service-card.selected .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(212, 165, 165, 0.4);
+}
+
+.booking-service-card .service-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.booking-service-card .service-price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.booking-service-card .check-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 0.8rem;
+}
+
+.booking-service-card.selected .check-mark {
+    display: flex;
+}
+
+/* Инфо о выбранной услуге */
+.selected-service-info {
+    background: linear-gradient(135deg, var(--primary-light), #F0E0E0);
+    border-radius: var(--radius-sm);
+    padding: 15px 20px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.booking-step h3 i {
-    color: var(--primary);
-    font-size: 1.3rem;
-}
-
-.booking-select {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #EDE0DC;
-    border-radius: var(--radius-sm);
-    font-family: inherit;
-    font-size: 1rem;
-    background: var(--bg);
+    gap: 12px;
     color: var(--text);
-    cursor: pointer;
-    transition: var(--transition);
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A39595' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 18px center;
+    font-weight: 500;
 }
 
-.booking-select:focus {
-    outline: none;
-    border-color: var(--primary);
-    background-color: var(--white);
+.selected-service-info i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.selected-service-info .change-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.selected-service-info .change-btn:hover {
+    color: var(--primary);
 }
 
 /* Days Grid */
@@ -544,6 +650,40 @@ section {
     border-color: var(--primary);
 }
 
+/* Booking Summary */
+.booking-summary {
+    background: linear-gradient(135deg, #F5EDE8, #EDE0DC);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.booking-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--primary-light);
+}
+
+.booking-summary .summary-row:last-child {
+    border-bottom: none;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+    padding-top: 12px;
+}
+
+.booking-summary .summary-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.booking-summary .summary-value {
+    font-weight: 500;
+    text-align: right;
+}
+
 /* Booking Form */
 .booking-form input {
     width: 100%;
@@ -562,12 +702,6 @@ section {
     outline: none;
     border-color: var(--primary);
     background: var(--white);
-}
-
-.booking-form input[readonly] {
-    background: #F5EDE8;
-    color: var(--text);
-    cursor: default;
 }
 
 .btn-glow {
@@ -594,24 +728,41 @@ section {
     box-shadow: 0 10px 28px rgba(212, 165, 165, 0.5);
 }
 
+/* Success Message */
 .success-message {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
-.success-message i {
-    font-size: 4rem;
-    color: #8DB580;
-    margin-bottom: 15px;
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #8DB580, #6B9B60);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--white);
+    font-size: 2.5rem;
+    animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .success-message h3 {
     color: var(--text);
     margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
 .success-message p {
     color: var(--text-light);
+    margin-bottom: 20px;
 }
 
 /* Footer */
@@ -732,6 +883,10 @@ footer p {
     .services-grid,
     .reviews-grid {
         grid-template-columns: 1fr;
+    }
+
+    .booking-services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .days-grid {
