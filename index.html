@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailHarmony | Студия маникюра и педикюра</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,19 +34,78 @@
     <main>
         <!-- Hero -->
         <section id="hero">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <h1 class="reveal active">Искусство <span>безупречного</span> маникюра</h1>
-                    <p class="reveal active" style="transition-delay: 0.2s;">
-                        NailHarmony — это студия, где каждая деталь имеет значение. Мы создаем не просто маникюр и педикюр, а настоящее произведение искусства, которое подчеркивает вашу индивидуальность и дарит уверенность каждый день.
-                    </p>
-                    <div class="btn-group reveal active" style="transition-delay: 0.4s;">
-                        <a href="#booking" class="btn btn-primary">Записаться онлайн</a>
-                        <a href="#services" class="btn btn-secondary">Наши услуги</a>
+            <!-- Декоративный фон -->
+            <div class="hero-bg-decor">
+                <div class="hero-circle circle-1"></div>
+                <div class="hero-circle circle-2"></div>
+                <div class="hero-circle circle-3"></div>
+                <div class="hero-line line-1"></div>
+                <div class="hero-line line-2"></div>
+                <div class="hero-dots"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge reveal active">
+                            <i class="fas fa-sparkles"></i> Премиум студия
+                        </div>
+                        <h1 class="reveal active">
+                            <span class="hero-word">Искусство</span><br>
+                            <span class="hero-highlight">
+                                <span class="highlight-letter">б</span><span class="highlight-letter">е</span><span class="highlight-letter">з</span><span class="highlight-letter">у</span><span class="highlight-letter">п</span><span class="highlight-letter">р</span><span class="highlight-letter">е</span><span class="highlight-letter">ч</span><span class="highlight-letter">н</span><span class="highlight-letter">о</span><span class="highlight-letter">г</span><span class="highlight-letter">о</span>
+                            </span><br>
+                            <span class="hero-word">маникюра</span>
+                        </h1>
+                        <p class="hero-description reveal active" style="transition-delay: 0.2s;">
+                            NailHarmony — это студия, где каждая деталь имеет значение. Мы создаем не просто маникюр и педикюр, а настоящее произведение искусства, которое подчеркивает вашу индивидуальность и дарит уверенность каждый день.
+                        </p>
+                        <div class="hero-features reveal active" style="transition-delay: 0.3s;">
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Премиум материалы</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Опытные мастера</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Стерильность 100%</span>
+                            </div>
+                        </div>
+                        <div class="btn-group reveal active" style="transition-delay: 0.5s;">
+                            <a href="#booking" class="btn btn-primary">
+                                <i class="fas fa-calendar-check"></i> Записаться онлайн
+                            </a>
+                            <a href="#services" class="btn btn-secondary">
+                                <i class="fas fa-chevron-down"></i> Наши услуги
+                            </a>
+                        </div>
+                        <div class="hero-rating reveal active" style="transition-delay: 0.6s;">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 — более 500 довольных клиентов</span>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-image reveal active" style="transition-delay: 0.6s;">
-                    <i class="fas fa-hand-sparkles"></i>
+                    <div class="hero-visual reveal active" style="transition-delay: 0.4s;">
+                        <div class="hero-text-animation">
+                            <div class="animated-letter">N</div>
+                            <div class="animated-letter">A</div>
+                            <div class="animated-letter">I</div>
+                            <div class="animated-letter">L</div>
+                            <div class="animated-letter space"> </div>
+                            <div class="animated-letter">A</div>
+                            <div class="animated-letter">R</div>
+                            <div class="animated-letter">T</div>
+                        </div>
+                        <div class="hero-subtitle-animation">искусство быть красивой</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -124,92 +183,43 @@
                 <h2 class="section-title reveal">Отзывы наших клиентов</h2>
                 <p class="section-subtitle reveal" style="text-align: center; margin-bottom: 20px;">Что говорят о нашей студии</p>
 
-                <div class="reviews-grid">
-                    <div class="review-card reveal">
-                        <span class="service-badge">✨ Классический маникюр</span>
-                        <div class="review-text">
-                            Безупречное качество! Ногти выглядят так аккуратно, что хочется любоваться ими постоянно. Мастер очень внимательна к деталям.
-                        </div>
-                        <div class="reviewer">
-                            <div class="avatar">АК</div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Анна К.</div>
-                                <div class="reviewer-meta">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="platform">Яндекс.Карты</span>
+                <div class="review-form-wrapper reveal">
+                    <button class="btn btn-primary" id="show-review-form">
+                        <i class="fas fa-pen"></i> Оставить отзыв
+                    </button>
+                    
+                    <div class="review-form-container" id="review-form-container" style="display: none;">
+                        <h3><i class="fas fa-star"></i> Ваш отзыв</h3>
+                        <form id="review-form" class="review-form">
+                            <input type="text" id="review-name" placeholder="Ваше имя" required>
+                            <select id="review-service" required>
+                                <option value="">Выберите услугу</option>
+                                <option value="Классический маникюр">✨ Классический маникюр</option>
+                                <option value="Аппаратный педикюр">🦶 Аппаратный педикюр</option>
+                                <option value="Дизайн ногтей">🎨 Дизайн ногтей</option>
+                                <option value="Наращивание ногтей">💎 Наращивание ногтей</option>
+                                <option value="SPA-уход для рук">🌿 SPA-уход для рук</option>
+                            </select>
+                            <div class="star-rating" id="star-rating">
+                                <span>Оценка:</span>
+                                <div class="stars-input">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="review-card reveal" style="transition-delay: 0.1s;">
-                        <span class="service-badge">🦶 Аппаратный педикюр</span>
-                        <div class="review-text">
-                            После спа-педикюра ножки как новые! Очень деликатная работа, никакого дискомфорта. Теперь только сюда.
-                        </div>
-                        <div class="reviewer">
-                            <div class="avatar">МС</div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Марина С.</div>
-                                <div class="reviewer-meta">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="platform">2ГИС</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-card reveal" style="transition-delay: 0.2s;">
-                        <span class="service-badge">🎨 Дизайн ногтей</span>
-                        <div class="review-text">
-                            Дизайнерский нейл-арт просто фантастика! Нарисовали то, что я даже представить не могла. Получила тысячу комплиментов.
-                        </div>
-                        <div class="reviewer">
-                            <div class="avatar">ЕН</div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Елена Н.</div>
-                                <div class="reviewer-meta">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="platform">Instagram</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-card reveal" style="transition-delay: 0.3s;">
-                        <span class="service-badge">💎 Наращивание</span>
-                        <div class="review-text">
-                            Наращиваю ногти третий раз — держатся отлично, не слоятся, выглядят очень естественно. Лучший мастер в городе!
-                        </div>
-                        <div class="reviewer">
-                            <div class="avatar">ИП</div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Ирина П.</div>
-                                <div class="reviewer-meta">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="platform">Яндекс.Карты</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-card reveal" style="transition-delay: 0.4s;">
-                        <span class="service-badge">🌿 SPA-уход</span>
-                        <div class="review-text">
-                            Парафинотерапия и массаж рук — это наслаждение! Атмосфера в студии невероятно уютная, музыка расслабляет. Вернусь обязательно.
-                        </div>
-                        <div class="reviewer">
-                            <div class="avatar">ДВ</div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Дарья В.</div>
-                                <div class="reviewer-meta">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="platform">WhatsApp</span>
-                                </div>
-                            </div>
-                        </div>
+                            <input type="hidden" id="review-rating" value="0">
+                            <textarea id="review-text" rows="4" placeholder="Поделитесь впечатлениями..." required></textarea>
+                            <button type="submit" class="btn-glow">
+                                <i class="fas fa-paper-plane"></i> Отправить отзыв
+                            </button>
+                        </form>
                     </div>
                 </div>
+
+                <div class="reviews-grid" id="reviews-grid"></div>
             </div>
         </section>
 
@@ -220,7 +230,6 @@
                 <p class="section-subtitle reveal" style="text-align: center; margin-bottom: 40px;">Выберите удобные дату и время</p>
                 
                 <div class="booking-container reveal">
-                    <!-- Шаг 1: Выбор услуги -->
                     <div class="booking-step" id="step-service">
                         <div class="step-header">
                             <div class="step-number">1</div>
@@ -229,7 +238,6 @@
                         <div class="booking-services-grid" id="booking-services"></div>
                     </div>
 
-                    <!-- Шаг 2: Выбор дня -->
                     <div class="booking-step" id="step-day" style="display: none;">
                         <div class="step-header">
                             <div class="step-number">2</div>
@@ -239,7 +247,6 @@
                         <div class="days-grid" id="days-grid"></div>
                     </div>
 
-                    <!-- Шаг 3: Выбор времени -->
                     <div class="booking-step" id="step-time" style="display: none;">
                         <div class="step-header">
                             <div class="step-number">3</div>
@@ -248,7 +255,6 @@
                         <div class="time-grid" id="time-grid"></div>
                     </div>
 
-                    <!-- Шаг 4: Форма -->
                     <div class="booking-step" id="step-form" style="display: none;">
                         <div class="step-header">
                             <div class="step-number">4</div>
